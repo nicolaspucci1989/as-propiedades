@@ -21,19 +21,6 @@
     .jarallax {
       height: 100%;
     }
-    .map-container {
-      overflow:hidden;
-      padding-bottom:56.25%;
-      position:relative;
-      height:0;
-    }
-      .map-container iframe {
-      left:0;
-      top:0;
-      height:100%;
-      width:100%;
-      position:absolute;
-    }
     header {
       height: auto;
     }
@@ -49,10 +36,8 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-  
+
         <div class="container">
-  
-          <a class="navbar-brand" href="#">AS Propiedades</a>
   
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,19 +52,19 @@
   
               <li class="nav-item">
   
-                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index.html">Inicio<span class="sr-only">(current)</span></a>
   
               </li>
   
               <li class="nav-item">
   
-                <a class="nav-link" href="listado-propiedades.html" data-offset="90">Venta</a>
+                <a class="nav-link" href="/html/listado-propiedades.html" data-offset="90">Venta</a>
   
               </li>
   
               <li class="nav-item">
   
-                <a class="nav-link" href="#contact" data-offset="100">Contacto</a>
+                <a class="nav-link" href="/html/contacto.html#contacto" data-offset="100">Contacto</a>
   
               </li>
   
@@ -114,6 +99,7 @@
   
       </nav>
   
+  
       <!-- Intro Section -->
       <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
         style="background-image: url('/img/as-prop/img 01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -132,7 +118,7 @@
   
                   <h4 class="text-uppercase font-weight-bold pb-5">Propiedades</h4>
   
-                  <h2 class="mt-3" id="galeria">Welcome to my portfolio!</h2>
+                  <h2 class=" mt-3">Welcome to my portfolio!</h2>
   
                 </div>
   
@@ -148,150 +134,84 @@
   
   </header>
   <!-- Navigation & Intro -->
-  
+
+
   <!-- Main layout -->
   <main>
 
-    <h1 class="text-center text-uppercase font-weight-bold  mt-5 mb-3 mt-4 wow fadeIn" data-wow-delay="0.2s">
-        Nombre de la propiedad</h1>
+    <div class="container-fluid" style="background-color: #323438;">
 
-      <!--First row-->
-      <div class="row">
+    <div class="container py-5">
 
-          <!--First column-->
-          <div class="col-md-12">
-        
-            <div id="mdb-lightbox-ui"></div>
-        
-            <!--Full width lightbox-->
-            <div class="mdb-lightbox">
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.01.JPG" data-size="4032x3024">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.01.JPG" class="img-fluid">
-                </a>
-              </figure>
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.08.JPG" data-size="4032x3024">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.08.JPG" class="img-fluid">
-                </a>
-              </figure>
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.09.JPG" data-size="4032x3024">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.09.JPG" class="img-fluid">
-                </a>
-              </figure>
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.11.JPG" data-size="4032x3024">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.11.JPG" class="img-fluid">
-                </a>
-              </figure>
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.12.JPG" data-size="4032x3024">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.12.JPG" class="img-fluid">
-                </a>
-              </figure>
-        
-              <figure class="col-md-3">
-                <a href="/img/as-prop/ciudad-jardin-lucas.10.jpg" data-size="3699x1704">
-                  <img src="/img/as-prop/ciudad-jardin-lucas.10.jpg" class="img-fluid">
-                </a>
-              </figure>
-        
-            </div>
-            <!--/Full width lightbox-->
-        
+        <!--Section: Content-->
+        <section class="my-md-5 z-depth-1 rounded" 
+          style="background-image: url('/img/as-prop/contacto.jpg'); background-size: cover; background-position: center center;">
+      
+          <div id="contacto" class="rgba-black-strong rounded py-5">
+      
+            <!-- Section heading -->
+            <h3 class="text-center font-weight-bold text-white mt-3 mb-5">Contacto</h3>
+      
+            <form class="mx-md-5" action="">
+      
+              <div class="row">
+                <div class="col-md-6 mb-4">
+      
+                  <div class="card">
+                    <div class="card-body px-4">
+      
+                      <!-- Name -->
+                      <div class="md-form md-outline mt-0">
+                        <input type="text" id="name" class="form-control">
+                        <label for="name">Nombre</label>
+                      </div>
+                      <!-- Email -->
+                      <div class="md-form md-outline">
+                        <input type="text" id="email" class="form-control">
+                        <label for="email">Email</label>
+                      </div>
+                      <!-- Message -->
+                      <div class="md-form md-outline">
+                        <textarea id="message" class="md-textarea form-control" rows="3"></textarea>
+                        <label for="message">Mensaje</label>
+                      </div>
+      
+                      <button type="submit" class="btn btn-primary btn-md btn-block ml-0 mb-0">Enviar</button>
+      
+                    </div>
+                  </div>
+      
+                </div>
+                <div class="col-md-5 offset-md-1 mt-md-4 mb-4 ml-3 white-text">
+      
+                  <h5 class="font-weight-bold">Direccion</h5>
+                  <p class="mb-0">1632 Main Street</p>
+                  <p class="mb-0">New York, 94126</p>
+                  <p class="mb-4 pb-2">United States</p>
+      
+                  <h5 class="font-weight-bold">Telefono</h5>
+                  <p class="mb-4 pb-2">+ 01 234 567 89</p>
+      
+                  <h5 class="font-weight-bold">Email</h5>
+                  <p>info@gmail.com</p>
+      
+                </div>
+              </div>
+      
+            </form>
+      
           </div>
-          <!--/First column-->
-        
-      </div>
-      <!--/First row-->
+      
+        </section>
+        <!--Section: Content-->
+      
+      
+    </div>
 
-    <!-- Table -->
-    <div class="card mb-5">
-
-      <div class="card-body">
-
-        <table class="table table-responsive-md">
-          <tbody>
-
-              <th scope="row" class="text-center">Tipo</th>
-
-              <td class="text-center">Tipo de propiedad</td>
-
-            </tr>
-
-            <tr>
-
-              <th scope="row" class="text-center">Ubicacion</th>
-
-              <td class="text-center">Ubicacion de la propiedad</td>
-
-            </tr>
-
-            <tr>
-
-              <th scope="row" class="text-center">Ambientes</th>
-
-              <td class="text-center">Cantidad de ambientes que tiene la propiedad</td>
-
-            </tr>
-
-            <tr>
-
-              <th scope="row" class="text-center">Precio</th>
-
-              <td class="text-center">Precio de la propiedad</td>
-
-            </tr>
-
-            <tr>
-
-              <th scope="row" class="text-center">Descripcion</th>
-
-              <td class="text-center">Una descripcion acerca de la  propiedad</td>
-
-            </tr>
-
-            <tr>
-
-              <th scope="row" class="text-center">Comentario</th>
-
-              <td class="text-center">Un comentario acerca de la propiedad</td>
-
-            </tr>
-
-          
-
-          </tbody>
-
-        </table>
-        <!-- Table -->
-        
-          <!--Google map-->
-          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-              <iframe src="https://maps.google.com/maps?q=villa+bosch&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
-          </div>
-          <!--Google Maps-->
-          
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col-2 ml-2">
-          <a class="btn btn btn-outline-blue waves-effect" href="listado-propiedades.html#propiedades">Volver</a>
-        </div>
-      </div>
+    </div>
 
   </main>
   <!-- Main layout -->
-
 
   <!-- Footer -->
   <footer class="page-footer text-center text-md-left mt-5  elegant-color-dark">
