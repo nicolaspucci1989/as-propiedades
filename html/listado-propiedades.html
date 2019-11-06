@@ -133,8 +133,23 @@
         
           <!-- VUE -->
           <div id="app">
-            <button @click="filtrarPropiedades">filtrar</button>
-            <productos-lista :propiedades="propiedades" titulo="Venta de propiedades">
+            <!--Dropdown primary-->
+            <div class="dropdown">
+
+                <!--Trigger-->
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">Barrio</button>
+              
+                <!--Menu-->
+                <div class="dropdown-menu dropdown-primary">
+                    <a class="dropdown-item" @click="todasLasPropiedades">Todas</a>
+                  <a class="dropdown-item" @click="filtrarPropiedades('Villa Bosch')">Villa Bosch</a>
+                  <a class="dropdown-item" @click="filtrarPropiedades('Moron')">Moron</a>
+                </div>
+              </div>
+            <!--/Dropdown primary-->
+            
+            <productos-lista :propiedades="propiedadesSeleccionadas" titulo="Venta de propiedades">
             </productos-lista>
           </div>      
           <!-- VUE -->
@@ -219,47 +234,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <script>
-    Vue.component('productos-lista', {
-      template: '<div>\
-          <h1 class="text-left white-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"\
-            data-wow-delay="0.2s">{{titulo}}</h1>\
-                <div class="card-columns">\
-                  <item-lista-productos v-for="propiedad in propiedades"\
-                  :propiedad="propiedad" :key="propiedad.id">\
-                  </item-lista-productos>\
-                </div>\
-                </div>',
-      props: ['titulo', 'propiedades']
-    });
-
-    Vue.component('item-lista-productos', {
-                  template: 
-                  '<div class="card">\
-                        <div class="view">\
-                          <!-- Card image -->\
-                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">\
-                          <!-- Vendido -->\
-                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">\
-                              <p class="h3 white-text"><strong>Vendido</strong></p>\
-                          </div>\
-                          <!-- Vendido -->\
-                        </div>\
-                        <div class="card-body">\
-                          <p class="h5">{{propiedad.direccion}}</p>\
-                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>\
-                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>\
-                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">\
-                            {{etiqueta}}</span>\
-                        </div>\
-                      </div>',
-                  props: ['propiedad']
-    });
-
-    let vm = new Vue({
-      el: '#app',
-      data: {
-        loggedIn: false,
-        propiedades: [
+    const propiedades = [
         {
           id: 1,
           imagen: '/img/as-prop/propiedades/001/casa.jose.001.jpg',
@@ -319,16 +294,61 @@
           valor: '220.000',
           vendido: false,
           etiquetas: ['3 amb.', '2 bañ.', 'cochera', '200 m² total']
-        },
-      ]
+        }];
+
+    Vue.component('productos-lista', {
+      template: '<div>\
+          <h1 class="text-left white-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"\
+            data-wow-delay="0.2s">{{titulo}}</h1>\
+                <div class="card-columns">\
+                  <item-lista-productos v-for="propiedad in propiedades"\
+                  :propiedad="propiedad" :key="propiedad.id">\
+                  </item-lista-productos>\
+                </div>\
+                </div>',
+      props: ['titulo', 'propiedades']
+    });
+
+    Vue.component('item-lista-productos', {
+                  template: 
+                  '<div class="card">\
+                        <div class="view">\
+                          <!-- Card image -->\
+                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">\
+                          <!-- Vendido -->\
+                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">\
+                              <p class="h3 white-text"><strong>Vendido</strong></p>\
+                          </div>\
+                          <!-- Vendido -->\
+                        </div>\
+                        <div class="card-body">\
+                          <p class="h5">{{propiedad.direccion}}</p>\
+                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>\
+                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>\
+                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">\
+                            {{etiqueta}}</span>\
+                        </div>\
+                      </div>',
+                  props: ['propiedad']
+    });
+
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        loggedIn: false,
+        propiedades,
+        propiedadesSeleccionadas: propiedades
       },
       methods: {
-        filtrarPropiedades() {
-          this.propiedades = this.propiedades.filter(function (propiedad) {
-            if (propiedad.barrio == 'Villa Bosch') {
+        filtrarPropiedades(barrio) {
+          this.propiedadesSeleccionadas = this.propiedades.filter(function (propiedad) {
+            if (propiedad.barrio == barrio) {
               return propiedad
             }
           })
+        },
+        todasLasPropiedades() {
+          this.propiedadesSeleccionadas = this.propiedades
         }
       }
     });
