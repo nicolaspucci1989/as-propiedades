@@ -128,6 +128,9 @@
       <!-- First container -->
       <div class="container pt-3">
 
+        <h1 class="text-left white-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"
+        data-wow-delay="0.2s">Venta de Propiedades</h1>
+
         <!-- Listado Propiedades -->
         <section id="propiedades" class="section pt-2 pb-5">
         
@@ -149,7 +152,7 @@
               </div>
             <!--/Dropdown primary-->
             
-            <productos-lista :propiedades="propiedadesSeleccionadas" titulo="Venta de propiedades">
+            <productos-lista :propiedades="propiedadesSeleccionadas">
             </productos-lista>
           </div>      
           <!-- VUE -->
@@ -298,20 +301,18 @@
 
     Vue.component('productos-lista', {
       template: '<div>\
-          <h1 class="text-left white-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"\
-            data-wow-delay="0.2s">{{titulo}}</h1>\
-                <div class="card-columns">\
+                <div class="row no-gutters">\
                   <item-lista-productos v-for="propiedad in propiedades"\
                   :propiedad="propiedad" :key="propiedad.id">\
                   </item-lista-productos>\
                 </div>\
                 </div>',
-      props: ['titulo', 'propiedades']
+      props: ['propiedades']
     });
 
     Vue.component('item-lista-productos', {
                   template: 
-                  '<div class="card">\
+                  '<div class="card col-lg-3 mx-2 my-2 text-center">\
                         <div class="view">\
                           <!-- Card image -->\
                           <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">\
