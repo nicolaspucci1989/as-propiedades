@@ -137,22 +137,6 @@
           <!-- VUE -->
           <div id="app">
 
-            <!--Dropdown primary-->
-            <div class="dropdown">
-
-                <!--Trigger-->
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">Barrio</button>
-              
-                <!--Menu-->
-                <div class="dropdown-menu dropdown-primary">
-                  <a class="dropdown-item" @click="todasLasPropiedades">Todas</a>
-                  <a class="dropdown-item" @click="filtrarPropiedades('Villa Bosch')">Villa Bosch</a>
-                  <a class="dropdown-item" @click="filtrarPropiedades('Moron')">Moron</a>
-                </div>
-            </div>
-            <!--/Dropdown primary-->
-            
             <productos-lista :propiedades="propiedadesSeleccionadas">
             </productos-lista>
           </div>      
@@ -282,7 +266,7 @@
         {
           id: 5,
           imagen: '/img/as-prop/propiedades/001/casa.jose.004.jpg',
-          direccion: 'Rosales 101',
+          direccion: 'Rosales 102',
           barrio: 'Moron',
           tipo: 'Departamento',
           valor: '220.000',
@@ -292,7 +276,7 @@
         {
           id: 6,
           imagen: '/img/as-prop/propiedades/001/casa.jose.004.jpg',
-          direccion: 'Rosales 101',
+          direccion: 'Rosales 103',
           barrio: 'Moron',
           tipo: 'Departamento',
           valor: '220.000',
@@ -300,15 +284,59 @@
           etiquetas: ['3 amb.', '2 bañ.', 'cochera', '200 m² total']
         }];
 
+    Vue.component('menu-lista', {
+      template: ' <!--Dropdown primary-->\
+                  <div class="dropdown">\
+                  \
+                    <!--Trigger-->\
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"\
+                      aria-haspopup="true" aria-expanded="false">Barrio</button>\
+                    \
+                    <!--Menu-->\
+                    <div class="dropdown-menu dropdown-primary">\
+                      <a class="dropdown-item" @click="todas">Todas</a>\
+                      <a class="dropdown-item" @click="filtrar(\'Villa Bosch\')">Villa Bosch</a>\
+                      <a class="dropdown-item" @click="filtrar(\'Moron\')">Moron</a>\
+                    </div>\
+                  </div>\
+                  <!--/Dropdown primary-->',
+      methods: {
+        filtrar: function(barrio) {
+          this.$emit('filtrar', {barrio: barrio});
+        },
+        todas: function() {
+          this.$emit('todas');
+        }
+      }
+    })
+
     Vue.component('productos-lista', {
+      data:function() {
+          return {
+            propSelec: propiedades
+        }
+      },
       template: '<div>\
+                <menu-lista @filtrar="filtrar" @todas="todas"></menu-lista>\
                 <div class="row no-gutters">\
                   <item-lista-productos v-for="propiedad in propiedades"\
                   :propiedad="propiedad" :key="propiedad.id">\
                   </item-lista-productos>\
                 </div>\
                 </div>',
-      props: ['propiedades']
+      props: ['propiedades'],
+      methods: {
+        filtrar: function(payload) {
+          this.propiedades = this.propSelec.filter(function (propiedad) {
+            if(propiedad.barrio == payload.barrio) {
+              return propiedad
+            }
+          })
+        },
+        todas: function() {
+          this.propiedades = this.propSelec
+        }
+      }
     });
 
     Vue.component('item-lista-productos', {
@@ -337,21 +365,13 @@
     let vm = new Vue({
       el: '#app',
       data: {
-        loggedIn: false,
         propiedades,
         propiedadesSeleccionadas: propiedades
       },
       methods: {
-        filtrarPropiedades(barrio) {
-          this.propiedadesSeleccionadas = this.propiedades.filter(function (propiedad) {
-            if (propiedad.barrio == barrio) {
-              return propiedad
-            }
-          })
-        },
         todasLasPropiedades() {
           this.propiedadesSeleccionadas = this.propiedades
-        }
+        },
       }
     });
   </script>
