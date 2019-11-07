@@ -285,28 +285,34 @@
         }];
 
     Vue.component('menu-lista', {
-      template: ' <!--Dropdown primary-->\
-                  <div class="dropdown">\
-                  \
-                    <!--Trigger-->\
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"\
-                      aria-haspopup="true" aria-expanded="false">Barrio</button>\
+      template: '<div class="container">\
                     \
-                    <!--Menu-->\
-                    <div class="dropdown-menu dropdown-primary">\
-                      <a class="dropdown-item" @click="todas">Todas</a>\
-                      <a class="dropdown-item" @click="filtrar(\'Villa Bosch\')">Villa Bosch</a>\
-                      <a class="dropdown-item" @click="filtrar(\'Moron\')">Moron</a>\
+                    <!--Dropdown barrio-->\
+                    <div class="dropdown">\
+                    \
+                      <!--Trigger-->\
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"\
+                        aria-haspopup="true" aria-expanded="false">Barrio</button>\
+                      \
+                      <!--Menu-->\
+                      <div class="dropdown-menu dropdown-primary">\
+                        <a class="dropdown-item"\
+                        v-for="(barrio, indice) in barrios" :key="indice" @click="filtrar(barrio)">{{ barrio }}</a>\
+                      </div>\
                     </div>\
-                  </div>\
-                  <!--/Dropdown primary-->',
+                    <!--/Dropdown barrio-->\
+                    \
+                  </div>',
+      data: function() {
+        return {
+          barrios: ['Todos', 'Villa Bosch', 'Moron', 'Palomar', 'Ballester'],
+          filtro: 'Barrio'
+        }
+      },
       methods: {
         filtrar: function(barrio) {
           this.$emit('filtrar', {barrio: barrio});
         },
-        todas: function() {
-          this.$emit('todas');
-        }
       }
     })
 
@@ -317,7 +323,7 @@
         }
       },
       template: '<div>\
-                <menu-lista @filtrar="filtrar" @todas="todas"></menu-lista>\
+                <menu-lista @filtrar="filtrar"></menu-lista>\
                 <div class="row no-gutters">\
                   <item-lista-productos v-for="propiedad in propSelec"\
                   :propiedad="propiedad" :key="propiedad.id">\
@@ -327,15 +333,12 @@
       props: ['propiedades'],
       methods: {
         filtrar: function(payload) {
-          this.propSelec = this.propiedades.filter(function (propiedad) {
-            if(propiedad.barrio == payload.barrio) {
-              return propiedad
+          barrio = payload.barrio
+          this.propSelec = 
+            barrio != 'Todos'
+              ? this.propiedades.filter(p => p.barrio === barrio)
+              : this.propiedades;
             }
-          })
-        },
-        todas: function() {
-          this.propSelec = this.propiedades
-        }
       }
     });
 
@@ -368,11 +371,6 @@
         propiedades,
         propiedadesSeleccionadas: propiedades
       },
-      methods: {
-        todasLasPropiedades() {
-          this.propiedadesSeleccionadas = this.propiedades
-        },
-      }
     });
   </script>
 
