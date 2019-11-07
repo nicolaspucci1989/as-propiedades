@@ -319,7 +319,7 @@
       template: '<div>\
                 <menu-lista @filtrar="filtrar" @todas="todas"></menu-lista>\
                 <div class="row no-gutters">\
-                  <item-lista-productos v-for="propiedad in propiedades"\
+                  <item-lista-productos v-for="propiedad in propSelec"\
                   :propiedad="propiedad" :key="propiedad.id">\
                   </item-lista-productos>\
                 </div>\
@@ -327,14 +327,14 @@
       props: ['propiedades'],
       methods: {
         filtrar: function(payload) {
-          this.propiedades = this.propSelec.filter(function (propiedad) {
+          this.propSelec = this.propiedades.filter(function (propiedad) {
             if(propiedad.barrio == payload.barrio) {
               return propiedad
             }
           })
         },
         todas: function() {
-          this.propiedades = this.propSelec
+          this.propSelec = this.propiedades
         }
       }
     });
