@@ -109,7 +109,7 @@
       <!-- First container -->
       <div class="container pt-3">
 
-        <h1 class="text-left black-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"
+        <h1 class="text-center black-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn"
         data-wow-delay="0.2s">Venta de Propiedades</h1>
 
         <!-- Listado Propiedades -->
@@ -117,9 +117,64 @@
         
           <!-- VUE -->
           <div id="app">
+              <div>
+                  <div class="container row mb-4">
+                      
+                      <!--Dropdown barrio-->
+                      <div class="dropdown">
+                      
+                        <!--Trigger-->
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">Barrio</button>
+                        
+                        <!--Menu-->
+                        <div class="dropdown-menu dropdown-primary">
+                          <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
+                        </div>
+                      </div>
+                      <!--/Dropdown barrio-->
 
-            <productos-lista :propiedades="propiedadesSeleccionadas">
-            </productos-lista>
+                      <!--Dropdown barrio-->
+                      <div class="dropdown">
+                      
+                          <!--Trigger-->
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Tipo de Propiedad</button>
+                          
+                          <!--Menu-->
+                          <div class="dropdown-menu dropdown-primary">
+                            <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
+                              :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
+                          </div>
+                      </div>
+                      <!--/Dropdown barrio-->
+
+                      
+                  </div>
+                <div class="row no-gutters">
+                    <div class="card col-lg-3 mx-2 my-2 text-center" v-for="propiedad in propiedadesComputadas">
+                        <div class="view">
+                          <!-- Card image -->
+                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">
+                          <!-- Vendido -->
+                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">
+                              <p class="h3 white-text"><strong>Vendido</strong></p>
+                          </div>
+                          <!-- Vendido -->
+                        </div>
+                        <div class="card-body">
+                          <p class="h5">{{propiedad.direccion}}</p>
+                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>
+                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>
+                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">
+                            {{etiqueta}}</span>
+                        </div>
+                    </div>
+                    <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
+                        <h1 class="font-weight-bold">NO SE ENCONTRARON PROPIEDADES</h1>
+                    </div>
+                </div>
+              </div>
           </div>      
           <!-- VUE -->
 
@@ -205,95 +260,36 @@
   <script src="/js/propiedades.js"></script>
 
   <script>
-    
-
-    Vue.component('menu-lista', {
-      template: '<div class="container">\
-                    \
-                    <!--Dropdown barrio-->\
-                    <div class="dropdown">\
-                    \
-                      <!--Trigger-->\
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"\
-                        aria-haspopup="true" aria-expanded="false">Barrio</button>\
-                      \
-                      <!--Menu-->\
-                      <div class="dropdown-menu dropdown-primary">\
-                        <a class="dropdown-item"\
-                        v-for="(barrio, indice) in barrios" :key="indice" @click="filtrar(barrio)">{{ barrio }}</a>\
-                      </div>\
-                    </div>\
-                    <!--/Dropdown barrio-->\
-                    \
-                  </div>',
-      data: function() {
-        return {
-          barrios: ['Todos', 'Villa Bosch', 'Moron', 'Palomar', 'Ballester'],
-          filtro: 'Barrio'
-        }
-      },
-      methods: {
-        filtrar: function(barrio) {
-          this.$emit('filtrar', {barrio: barrio});
-        },
-      }
-    })
-
-    Vue.component('productos-lista', {
-      data:function() {
-          return {
-            propSelec: propiedades
-        }
-      },
-      template: '<div>\
-                <menu-lista @filtrar="filtrar"></menu-lista>\
-                <div class="row no-gutters">\
-                  <item-lista-productos v-for="propiedad in propSelec"\
-                  :propiedad="propiedad" :key="propiedad.id">\
-                  </item-lista-productos>\
-                </div>\
-                </div>',
-      props: ['propiedades'],
-      methods: {
-        filtrar: function(payload) {
-          barrio = payload.barrio
-          this.propSelec = 
-            barrio != 'Todos'
-              ? this.propiedades.filter(p => p.barrio === barrio)
-              : this.propiedades;
-            }
-      } //agregar filtro tipo de propiedad
-    });
-
-    Vue.component('item-lista-productos', {
-                  template: 
-                  '<div class="card col-lg-3 mx-2 my-2 text-center">\
-                        <div class="view">\
-                          <!-- Card image -->\
-                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">\
-                          <!-- Vendido -->\
-                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">\
-                              <p class="h3 white-text"><strong>Vendido</strong></p>\
-                          </div>\
-                          <!-- Vendido -->\
-                        </div>\
-                        <div class="card-body">\
-                          <p class="h5">{{propiedad.direccion}}</p>\
-                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>\
-                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>\
-                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">\
-                            {{etiqueta}}</span>\
-                        </div>\
-                      </div>',
-                  props: ['propiedad']
-    });
 
     let vm = new Vue({
       el: '#app',
       data: {
+        barrioSeleccionado: 'Todos',
+        tipoPropiedadSeleccionada: 'Todos',
         propiedades: propiedades,
-        propiedadesSeleccionadas: propiedades
+        tipoPropiedades: ['Todos','Chalet', 'Casa', 'PH', 'Departamento'],
+        barrios: ['Todos', 'Palomar', 'Villa Bosch', 'Moron', 'Ballester'],
       },
+      computed: {
+        propiedadesComputadas: function() {
+          let filtroPropiedad = this.tipoPropiedadSeleccionada,
+              filtroBarrio = this.barrioSeleccionado
+
+          return this.propiedades.filter(function(propiedad){
+
+            let filtrado = true
+            if(filtroBarrio != 'Todos') {
+              filtrado = propiedad.barrio === filtroBarrio
+            }
+            if(filtrado){
+              if(filtroPropiedad != 'Todos') {
+                filtrado = propiedad.tipo === filtroPropiedad
+              }
+            }
+              return filtrado
+            })
+         }
+      }
     });
   </script>
 
