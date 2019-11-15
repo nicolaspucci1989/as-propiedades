@@ -121,7 +121,7 @@
                   <div class="container row mb-4">
                       
                       <!--Dropdown barrio-->
-                      <div class="dropdown col-md-6">
+                      <div class="dropdown col-md-4">
                       
                         <!--Trigger-->
                         <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -135,7 +135,7 @@
                       <!--/Dropdown barrio-->
 
                       <!--Dropdown barrio-->
-                      <div class="dropdown col-md-6">
+                      <div class="dropdown col-md-4">
                       
                           <!--Trigger-->
                           <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -148,6 +148,8 @@
                           </div>
                       </div>
                       <!--/Dropdown barrio-->
+
+                      <button class=" col-md-3 btn btn-primary" type="button" aria-haspopup="true" aria-expanded="false" @click="reiniciar">REINICIAR</button>
 
                       
                   </div>
@@ -292,6 +294,12 @@
          mensajeNoSeEncontro: function() {
            return 'No se encontro ' + this.tipoPropiedadSeleccionada + ' en ' + this.barrioSeleccionado;
          }
+      },
+      methods: {
+        reiniciar: function() {
+          this.barrioSeleccionado = 'Todos los barrios'
+          this.tipoPropiedadSeleccionada = 'Todas las propiedades'
+        }
       }
     });
   </script>
