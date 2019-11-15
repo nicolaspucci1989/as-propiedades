@@ -121,28 +121,28 @@
                   <div class="container row mb-4">
                       
                       <!--Dropdown barrio-->
-                      <div class="dropdown">
+                      <div class="dropdown col-md-6">
                       
                         <!--Trigger-->
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false">Barrio</button>
+                        <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">{{barrioSeleccionado}}</button>
                         
                         <!--Menu-->
-                        <div class="dropdown-menu dropdown-primary">
+                        <div class="container-fluid dropdown-menu dropdown-primary">
                           <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
                         </div>
                       </div>
                       <!--/Dropdown barrio-->
 
                       <!--Dropdown barrio-->
-                      <div class="dropdown">
+                      <div class="dropdown col-md-6">
                       
                           <!--Trigger-->
-                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Tipo de Propiedad</button>
+                          <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">{{tipoPropiedadSeleccionada}}</button>
                           
                           <!--Menu-->
-                          <div class="dropdown-menu dropdown-primary">
+                          <div class="container-fluid dropdown-menu dropdown-primary">
                             <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
                               :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
                           </div>
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
-                        <h1 class="font-weight-bold">NO SE ENCONTRARON PROPIEDADES</h1>
+                        <h1 class="font-weight-bold">{{mensajeNoSeEncontro}}</h1>
                     </div>
                 </div>
               </div>
@@ -264,11 +264,11 @@
     let vm = new Vue({
       el: '#app',
       data: {
-        barrioSeleccionado: 'Todos',
-        tipoPropiedadSeleccionada: 'Todos',
+        barrioSeleccionado: 'Todos los barrios',
+        tipoPropiedadSeleccionada: 'Todas las propiedades',
         propiedades: propiedades,
-        tipoPropiedades: ['Todos','Chalet', 'Casa', 'PH', 'Departamento'],
-        barrios: ['Todos', 'Palomar', 'Villa Bosch', 'Moron', 'Ballester'],
+        barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Moron', 'Ballester'],
+        tipoPropiedades: ['Todas las propiedades','Chalet', 'Casa', 'PH', 'Departamento'],
       },
       computed: {
         propiedadesComputadas: function() {
@@ -278,16 +278,19 @@
           return this.propiedades.filter(function(propiedad){
 
             let filtrado = true
-            if(filtroBarrio != 'Todos') {
+            if(filtroBarrio != 'Todos los barrios') {
               filtrado = propiedad.barrio === filtroBarrio
             }
             if(filtrado){
-              if(filtroPropiedad != 'Todos') {
+              if(filtroPropiedad != 'Todas las propiedades') {
                 filtrado = propiedad.tipo === filtroPropiedad
               }
             }
               return filtrado
             })
+         },
+         mensajeNoSeEncontro: function() {
+           return 'No se encontro ' + this.tipoPropiedadSeleccionada + ' en ' + this.barrioSeleccionado;
          }
       }
     });
