@@ -58,6 +58,7 @@
     }
     
     .site-header .layout-hero {
+      margin: 50px;
       min-height: 50vh;
     }
 
@@ -69,6 +70,10 @@
       font-family: 'Pacifico', cursive;
     }
 
+    @media (max-width: 414px) {
+      #encontra{font-size: 5px;}
+    }
+
   </style>
 
 </head>
@@ -76,7 +81,7 @@
 <body class="architect">
 
   <!-- Navigation & Intro -->
-  <header class="site-header">
+  <header class="">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top scrolling-navbar">
@@ -150,11 +155,11 @@
     </nav>
   
     <section class=" intro-section layout-hero text-light text-center d-flex">
-      <div class="container align-self-end pt-2">
+      <div class="container align-self-end pt-2" >
 
-          <div class="container-flex col-md-8 text-left pacifico white-text">
-            <h1>Encontrá</h1>
-            <h1>tu lugar en el mundo</h1>
+          <div id="encontra" class="container-flex col-md-8 mt-5 text-left pacifico white-text">
+            <h1 class="h1">Encontrá</h1>
+            <h1 class="h1">tu lugar en el mundo</h1>
           </div>
          
           <div class="col-md-6 offset-md-3 align-bottom wow fadeIn">
