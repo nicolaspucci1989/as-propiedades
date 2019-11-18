@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Ariel Sauret Propiedades</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="../css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="video.css">
+
+  <style>
+
+    header {
+      border-radius: initial;
+      mask-image: none;
+      -webkit-border-radius: 10px;
+      -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    }
+
+    
+  .rowoverlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index:1;
+    bottom:0;
+    right:0;
+    height:100%;
+  }
+
+    
+  </style>
+</head>
+<body>
+    <header>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top scrolling-navbar">
+
+          <div class="container">
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    
+              <span class="navbar-toggler-icon"></span>
+    
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    
+              <ul class="navbar-nav mr-auto smooth-scroll font-weight-bold">
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="/index.html">Inicio <span class="sr-only">(current)</span></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="html/listado-propiedades.html" data-offset="90">Venta</a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="html/contacto.html#contacto" data-offset="100">Contacto</a>
+    
+                </li>
+    
+              </ul>
+    
+              <!-- Social Icon  -->
+              <ul class="navbar-nav nav-flex-icons">
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-whatsapp"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-twitter"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-instagram"></i></a>
+    
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+          </div>
+    
+      </nav>
+
+      <div class="overlay" ></div>
+      <div id="contenedor" class="container">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="/img/video.mp4" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center align-text-bottom">
+          <div class="w-100 text-white pt-5 text-left font-weight-bold">
+            <h1 class="display-3">Encontra</h1>
+            <h1 class="display-3">tu lugar en el mundo</h1>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </header>
+      
+      <row class="row rowoverlay">
+        <img class="col-md-4 offset-md-4" src="/img/svg/ciudad 1.svg" alt="">
+      </row>
+
+      <section class="my-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mx-auto">
+
+              <!-- Rotating card -->
+              <div class="card-wrapper">
+                <div id="card-1" class="card card-rotating text-center">
+              
+                  <!-- Front Side -->
+                  <div class="face front">
+              
+                    <!-- Image-->
+                    <div class="card-up">
+                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" alt="Image with a photo of clouds.">
+                    </div>
+              
+                    <!-- Content -->
+                    <div class="card-body">
+                      <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
+                    </div>
+                  </div>
+                  <!-- Front Side -->
+              
+                  <!-- Back Side -->
+                  <div class="face back">
+                    <div class="card-body">
+              
+                      <!-- Content -->
+                      <h4 class="font-weight-bold mb-0">About me</h4>
+                      <hr>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel
+                        eius veniam maxime?
+                          <hr>
+              
+                    </div>
+                  </div>
+                  <!-- Back Side -->
+              
+                </div>
+              </div>
+              <!-- Rotating card -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript " src="../js/jquery-3.4.1.min.js "></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript " src="../js/popper.min.js "></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript " src="../js/bootstrap.min.js "></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript " src="../js/mdb.min.js "></script>
+
+  <script>
+  
+    //Animation init
+    new WOW().init();
+
+    $('#card-1').hover(
+      function(){$(this).addClass('flipped')},
+      function(){$(this).removeClass('flipped')},
+    )
+
+  </script>
+
+</body>
+</html>
