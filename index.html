@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,579 +11,550 @@
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="../css/mdb.min.css" rel="stylesheet">
-  <!-- Google fonts Pacifico cursive -->
-  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="video.css">
+  <!-- Muli google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <style>
-    html,
-    body,
-    .jarallax {
-      height: 100%;
-    }
-    .view {
-      height: 100%;
-    }
-    .intro-section {
-      height: 85%;
-    }
-    @media (max-width: 450px) {
-      html,
-      body,
-      .view {
-        height: 700px;
-      }
-    }
-    @media (min-width: 451px) and (max-width: 740px) {
-      html,
-      body,
-      .view {
-        height: 500px;
-      }
-    }
-    @media (min-width: 800px) and (max-width: 850px) {
-      html,
-      body,
-      .view {
-        height: 550px;
-      }
+    body {
+      font-family: 'Muli', sans-serif;
     }
 
-    .site-header {
-      background: url(img/as-prop/carousel.01.jpg);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    header,
+    .propiedades {
+      border-radius: initial;
+      mask-image: none;
+      -webkit-border-radius: 10px;
+      -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    }
+
+    .propiedades {
+      background-color: #212529;
     }
     
-    .site-header .layout-hero {
-      margin: 50px;
-      min-height: 50vh;
-    }
+  .rowoverlay{
+    position: absolute;
+    top: 150px;
+    left:0;
+    z-index:1;
+    bottom:0;
+    right:0;
+    height: 80%;
+  }
 
-    .flex-fill {
-      flex: 1 1 auto;
-    }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #212529;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
 
-    .pacifico {
-      font-family: 'Pacifico', cursive;
-    }
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+  }
 
-    @media (max-width: 414px) {
-      #encontra{font-size: 5px;}
-    }
+  .card-wrapper:hover .overlay {
+    height: 75%;
+  }
 
+  .text {
+    font-family: 'Muli', sans-serif;
+  }
+
+    
   </style>
-
 </head>
+<body>
 
-<body class="architect">
+    <header>
 
-  <!-- Navigation & Intro -->
-  <header class="">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top scrolling-navbar">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top scrolling-navbar">
 
-      <div class="container">
+          <div class="container">
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+              aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    
+              <span class="navbar-toggler-icon"></span>
+    
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarToggler">
+    
+              <ul class="navbar-nav mr-auto smooth-scroll">
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="/index.html">Inicio <span class="sr-only">(current)</span></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="html/listado-propiedades.html" data-offset="90">Venta</a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-item nav-link" href="html/contacto.html#contacto" data-offset="100">Contacto</a>
+    
+                </li>
+    
+              </ul>
+    
+              <!-- Social Icon  -->
+              <ul class="navbar-nav nav-flex-icons">
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-whatsapp"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-twitter"></i></a>
+    
+                </li>
+    
+                <li class="nav-item">
+    
+                  <a class="nav-link"><i class="fab fa-instagram"></i></a>
+    
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+          </div>
+    
+      </nav>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-
-          <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
-          <ul class="navbar-nav mr-auto smooth-scroll">
-
-            <li class="nav-item">
-
-              <a class="nav-item nav-link" href="/index.html">Inicio <span class="sr-only">(current)</span></a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-item nav-link" href="html/listado-propiedades.html" data-offset="90">Venta</a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-item nav-link" href="html/contacto.html#contacto" data-offset="100">Contacto</a>
-
-            </li>
-
-          </ul>
-
-          <!-- Social Icon  -->
-          <ul class="navbar-nav nav-flex-icons">
-
-            <li class="nav-item">
-
-              <a class="nav-link"><i class="fab fa-whatsapp"></i></a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-link"><i class="fab fa-twitter"></i></a>
-
-            </li>
-
-            <li class="nav-item">
-
-              <a class="nav-link"><i class="fab fa-instagram"></i></a>
-
-            </li>
-
-          </ul>
-
+      <div class="overlay" ></div>
+      <div class="container mt-5">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="/img/video.mp4" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center align-text-bottom">
+          <div class="w-100 text-white pt-5 text-left font-weight-bold black-text">
+            <h1 class="display-3">Encontrá</h1>
+            <h1 class="display-3">tu lugar en el mundo</h1>
+          </div>
         </div>
-
+      </div>
       </div>
 
-    </nav>
-  
-    <section class=" intro-section layout-hero text-light text-center d-flex">
-      <div class="container align-self-end pt-2" >
-
-          <div id="encontra" class="container-flex col-md-8 mt-5 text-left pacifico white-text">
-            <h1 class="h1">Encontrá</h1>
-            <h1 class="h1">tu lugar en el mundo</h1>
-          </div>
-         
-          <div class="col-md-6 offset-md-3 align-bottom wow fadeIn">
-            <img src="img/svg/ciudad 1.svg" alt="">
-          </div>
-
-      </div>
-    </section>
-
-  </header>
-  <!-- Navigation & Intro -->
-
-  <!-- Main layout -->
-  <main>
+    </header>
+    
+    <row class="row rowoverlay">
+      <img class="col-md-4 offset-md-4 align-bottom" src="/img/svg/ciudad 1.svg" >
+    </row>
 
     <!-- Second container -->
     <div class="container">
 
-      <!-- Second section -->
-      <section id="services" class="section feature-box pt-3 pb-4">
-
-        <!-- First row -->
-        <div class="row my-5 pt-4 wow fadeIn" data-wow-delay="0.2s">
-
-          <div class="col-lg-3 col-md-6 text-center pt-4">
-            <!-- Rotating card -->
-            <div class="card-wrapper">
-              <div id="card-alquilar" class="card card-rotating text-center">
-            
-                <!-- Front Side -->
-                <div class="face front">
-            
-                  <!-- Image-->
-                  <div class="card-up">
-                    <img class="card-img-top" src="img/alquilar.jpg" alt="Image with a photo of clouds.">
-                  </div>
-            
-                  <!-- Content -->
-                  <div class="card-body">
-                    <h4 class="font-weight-bold mb-3">Alquilar</h4>
-                  </div>
-                </div>
-                <!-- Front Side -->
-            
-                <!-- Back Side -->
-                <div class="face back">
-                  <div class="card-body">
-            
+        <!-- Second section -->
+        <section id="services" class="section feature-box pt-3 pb-4">
+  
+          <!-- First row -->
+          <div class="row my-5 pt-4" data-wow-delay="0.2s">
+  
+            <div class="col-lg-3 col-md-6 text-center pt-4 wow fadeInLeft">
+              <!-- Rotating card -->
+              <div class="card-wrapper">
+                <div id="card-alquilar" class="card card-rotating text-center">
+              
+                  <!-- Front Side -->
+                  <div class="face front">
+              
+                    <!-- Image-->
+                    <div class="card-up">
+                      <img class="card-img-top" src="img/alquilar.jpg" alt="Image with a photo of clouds.">
+                      <div class="overlay">
+                        <div class="text">Todos los alquileres que estas buscando encontralos acá</div>
+                      </div>
+                    </div>
+              
                     <!-- Content -->
-                    <hr>
-                    <p>Todos los alquileres que estas buscando encontralos acá.</p>
-                      <hr>
-                      <a href="/html/listado-propiedades.html"><i class="fas fa-chevron-circle-right"></i></a>
+                    <div class="card-body">
+                      <h4 class="font-weight-bold mb-3">Alquilar</h4>
+                    </div>
                   </div>
+                  <!-- Front Side -->
+              
                 </div>
-                <!-- Back Side -->
-            
               </div>
+              <!-- Rotating card -->
             </div>
-            <!-- Rotating card -->
-          </div>
-
-          <div class="col-lg-3 col-md-6 text-center pt-4">
-              <!-- Rotating card -->
-              <div class="card-wrapper">
-                <div id="card-comprar" class="card card-rotating text-center">
-              
-                  <!-- Front Side -->
-                  <div class="face front">
-              
-                    <!-- Image-->
-                    <div class="card-up">
-                      <img class="card-img-top" src="img/comprar.jpg" alt="Image with a photo of clouds.">
-                    </div>
-              
-              
-                    <!-- Content -->
-                    <div class="card-body">
-                      <h4 class="font-weight-bold mb-3">Comprar</h4>
-                    </div>
-                  </div>
-                  <!-- Front Side -->
-              
-                  <!-- Back Side -->
-                  <div class="face back">
-                    <div class="card-body">
-              
+  
+            <div class="col-lg-3 col-md-6 text-center pt-4 wow fadeInLeft">
+                <!-- Rotating card -->
+                <div class="card-wrapper">
+                  <div id="card-comprar" class="card card-rotating text-center">
+                
+                    <!-- Front Side -->
+                    <div class="face front">
+                
+                      <!-- Image-->
+                      <div class="card-up">
+                        <img class="card-img-top" src="img/comprar.jpg" alt="Image with a photo of clouds.">
+                      </div>
+                
+                
                       <!-- Content -->
-                      <hr>
-                      <p>
-                        Amplia variedad de oportunidades
-                        <hr>
-                          <i class="fas fa-chevron-circle-right"></i>
-                        </ul>
-
+                      <div class="card-body">
+                        <h4 class="font-weight-bold mb-3">Comprar</h4>
+                      </div>
+                      <div class="overlay">
+                        <div class="text">Amplia variedad de oportunidades, encontra la tuya</div>
+                      </div>
                     </div>
+                    <!-- Front Side -->
+                
                   </div>
-                  <!-- Back Side -->
-              
                 </div>
-              </div>
-              <!-- Rotating card -->
-          </div>
-
-          <div class="col-lg-3 col-md-6 text-center pt-4">
-              <!-- Rotating card -->
-              <div class="card-wrapper">
-                <div id="card-emprendimientos" class="card card-rotating text-center">
-              
-                  <!-- Front Side -->
-                  <div class="face front">
-              
-                    <!-- Image-->
-                    <div class="card-up">
-                      <img class="card-img-top" src="img/emprendimientos.jpg" alt="Image with a photo of clouds.">
-                    </div>
-              
-                    <!-- Content -->
-                    <div class="card-body">
-                      <h4 class="font-weight-bold mb-3">Emprendimientos</h4>
-                    </div>
-                  </div>
-                  <!-- Front Side -->
-              
-                  <!-- Back Side -->
-                  <div class="face back">
-                    <div class="card-body">
-              
+                <!-- Rotating card -->
+            </div>
+  
+            <div class="col-lg-3 col-md-6 text-center pt-4 wow fadeInRight">
+                <!-- Rotating card -->
+                <div class="card-wrapper">
+                  <div id="card-emprendimientos" class="card card-rotating text-center">
+                
+                    <!-- Front Side -->
+                    <div class="face front">
+                
+                      <!-- Image-->
+                      <div class="card-up">
+                        <img class="card-img-top" src="img/emprendimientos.jpg" alt="Image with a photo of clouds.">
+                      </div>
+                
                       <!-- Content -->
-                      <hr>
-                      <p>
-                        Todos los emprendimientos que estas buscando
-                        <hr>
-                        <!-- Social Icons -->
-                        <ul class="list-inline py-2">
-                          <i class="fas fa-chevron-circle-right"></i>
-
-                          
-                        </ul>
-              
+                      <div class="card-body">
+                        <h4 class="font-weight-bold mb-3">Emprendimientos</h4>
+                        <div class="overlay">
+                          <div class="text">Todos los emprendimientos que estas buscando, encontralos acá</div>
+                        </div>
+                      </div>
                     </div>
+                    <!-- Front Side -->
+
                   </div>
-                  <!-- Back Side -->
-              
                 </div>
-              </div>
-              <!-- Rotating card -->
-          </div>
-
-          <div class="col-lg-3 col-md-6 text-center pt-4">
-              <!-- Rotating card -->
-              <div class="card-wrapper">
-                <div id="card-tasaciones" class="card card-rotating text-center">
-              
-                  <!-- Front Side -->
-                  <div class="face front">
-              
-                    <!-- Image-->
-                    <div class="card-up">
-                      <img class="card-img-top" src="img/tasaciones.jpg" alt="Image with a photo of clouds.">
-                    </div>
-              
-              
-                    <!-- Content -->
-                    <div class="card-body">
-                      <h4 class="font-weight-bold mb-3">Tasaciones</h4>
-                    </div>
-                  </div>
-                  <!-- Front Side -->
-              
-                  <!-- Back Side -->
-                  <div class="face back">
-                    <div class="card-body">
-              
+                <!-- Rotating card -->
+            </div>
+  
+            <div class="col-lg-3 col-md-6 text-center pt-4 wow fadeInRight">
+                <!-- Rotating card -->
+                <div class="card-wrapper">
+                  <div id="card-tasaciones" class="card card-rotating text-center">
+                
+                    <!-- Front Side -->
+                    <div class="face front">
+                
+                      <!-- Image-->
+                      <div class="card-up">
+                        <img class="card-img-top" src="img/tasaciones.jpg" alt="Image with a photo of clouds.">
+                        
+                      </div>
+                
+                
                       <!-- Content -->
-                      <hr>
-                      <p>
-                        Estas buscando vender o alquilar tu propiedad? Comunicate con nosotros.
-                        <hr>
-                        <!-- Social Icons -->
-                        <ul class="list-inline py-2">
-                          <i class="fas fa-chevron-circle-right"></i>
-
-                        </ul>
-              
+                      <div class="card-body">
+                        <h4 class="font-weight-bold mb-3">Tasaciones</h4>
+                        <div class="overlay">
+                          <div class="text">Todos los alquileres que estas buscando, encontralos acá</div>
+                        </div>
+                      </div>
                     </div>
+                    <!-- Front Side -->
+                
+                    <!-- Back Side -->
+                    <div class="face back">
+                      <div class="card-body">
+                
+                        <!-- Content -->
+                        <hr>
+                        <p>
+                          Estas buscando vender o alquilar tu propiedad? Comunicate con nosotros.
+                          <hr>
+                          <!-- Social Icons -->
+                          <ul class="list-inline py-2">
+                            <i class="fas fa-chevron-circle-right"></i>
+  
+                          </ul>
+                
+                      </div>
+                    </div>
+                    <!-- Back Side -->
+                
                   </div>
-                  <!-- Back Side -->
-              
                 </div>
-              </div>
-              <!-- Rotating card -->
+                <!-- Rotating card -->
+            </div>
+  
           </div>
-
-        </div>
-        <!-- First row -->
-
-      </section>
-      <!-- Second section -->
-
+          <!-- First row -->
+  
+        </section>
+        <!-- Second section -->
+  
     </div>
     <!-- Second container -->
 
+    <div class="container">
+      <hr>
+    </div>
+
     <!-- Third container -->
-    <div class="container-fluid" style="background-color: #e8eaec;">
+    <div class="container-fluid">
 
-      <div class="container-fluid">
-
-        <!-- Section: Main portfolio -->
-        <section id="portfolio" class="section pt-3 pb-3">
-
-          <h1 class="text-center text-uppercase font-weight-bold mt-5 mb-3 mt-5 wow fadeIn" data-wow-delay="0.2s">
-            Propiedades</h1>
-
-          <!-- Section description -->
-          <p class="text-center w-responsive mx-auto text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.2s">
-            Algunas de nuestras propiedades</p>
-
-
-          <!-- First row -->
-          <div class="row ml-3 mr-3 pb-4 pt-1 wow fadeIn" data-wow-delay="0.4s">
-
-            <!-- First column -->
-            <div class="col-md-12">
-
-              <div id="mdb-lightbox-ui"></div>
-
-              <!-- Full width lightbox -->
-              <div class="mdb-lightbox">
-
-                <figure class="col-md-3">
-
-                  <a href="\img\as-prop\img-02.jpg" data-size="1600x1067">
-
-                    <img src="\img\as-prop\img-02.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Casa Jose</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-03.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-03.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Palomar</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-04.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-04.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Martin Coronado</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-05.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-05.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Ciudad Jardin</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-06.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-06.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| San Martin</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-07.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-07.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Surra</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-08.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-08.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Monet</p>
-
-                </figure>
-
-                <figure class="col-md-3">
-
-                  <a href="/img/as-prop/img-09.jpg" data-size="1600x1067">
-
-                    <img src="/img/as-prop/img-09.jpg"
-                      class="img-fluid z-depth-1">
-
-                  </a>
-
-                  <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Verna</p>
-
-                </figure>
-
-              </div>
-              <!-- Full width lightbox -->
-
-            </div>
-
-            <!-- First column -->
-            <div class="row pt-5 mb-4 center-text">
-
+        <div class="container-fluid">
+  
+          <!-- Section: Main portfolio -->
+          <section id="portfolio" class="section pt-3 pb-3">
+  
+            <h1 class="text-center text-uppercase font-weight-bold mt-5 mb-3 mt-5 wow fadeIn" data-wow-delay="0.2s">
+              Propiedades</h1>
+  
+            <!-- Section description -->
+            <p class="text-center w-responsive mx-auto text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+              Algunas de nuestras propiedades</p>
+  
+  
+            <!-- First row -->
+            <div class="row ml-3 mr-3 pb-4 pt-1 wow fadeIn" data-wow-delay="0.4s">
+  
+              <!-- First column -->
               <div class="col-md-12">
-
-                <a class="btn btn-outline-black waves-effect" href="/html/listado-propiedades.html"><strong
-                    class="font-weight-bold mb-3 pb-3">ver mas propiedades</strong></a>
-
+  
+                <div id="mdb-lightbox-ui"></div>
+  
+                <!-- Full width lightbox -->
+                <div class="mdb-lightbox">
+  
+                  <figure class="col-md-3">
+  
+                    <a href="\img\as-prop\img-02.jpg" data-size="1600x1067">
+  
+                      <img src="\img\as-prop\img-02.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Casa Jose</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-03.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-03.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Palomar</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-04.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-04.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Martin Coronado</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-05.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-05.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Ciudad Jardin</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-06.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-06.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| San Martin</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-07.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-07.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Surra</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-08.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-08.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Monet</p>
+  
+                  </figure>
+  
+                  <figure class="col-md-3">
+  
+                    <a href="/img/as-prop/img-09.jpg" data-size="1600x1067">
+  
+                      <img src="/img/as-prop/img-09.jpg"
+                        class="img-fluid z-depth-1">
+  
+                    </a>
+  
+                    <p class="text-uppercase font-weight-bold blue-grey-text mt-4">| Verna</p>
+  
+                  </figure>
+  
+                </div>
+                <!-- Full width lightbox -->
+  
               </div>
-
+  
+              <!-- First column -->
+              <div class="row pt-5 mb-4 center-text">
+  
+                <div class="col-md-12">
+  
+                  <a class="btn btn-outline-black waves-effect" href="/html/listado-propiedades.html"><strong
+                      class="font-weight-bold mb-3 pb-3">ver mas propiedades</strong></a>
+  
+                </div>
+  
+              </div>
+  
             </div>
-
-          </div>
-          <!-- First row -->
-
-        </section>
-        <!-- Section: Main portfolio -->
-
-      </div>
-
+            <!-- First row -->
+  
+          </section>
+          <!-- Section: Main portfolio -->
+  
+        </div>
+  
     </div>
     <!-- Third container -->
 
-   <div class="container-fluid wow fadeIn" style="background-color: #e8eaec;">
-     <div class="col-md-4 offset-md-4">
-       <img src="img/svg/ciudad 2.svg" alt="">
-     </div>
-   </div>
+    <div class="container-fluid wow fadeIn">
+      <div class="col-md-4 offset-md-4">
+        <img src="img/svg/ciudad 2.svg" alt="">
+      </div>
+    </div>
 
-  </main>
-  <!-- Main layout -->
+     <!-- Footer -->
+    <footer class="page-footer text-center text-md-left elegant-color-dark">
 
-
-  <!-- Footer -->
-  <footer class="page-footer text-center text-md-left elegant-color-dark">
-
-    <!-- Footer Links -->
-    <div class="container mb-2">
-
-      <!-- First row -->
-      <div class="row">
-
-        <!-- First column -->
-        <div class="col-md-12 my-4 wow fadeIn" data-wow-delay="0.3s">
-
-          <div class="footer-socials flex-center">
-
-            <!-- Facebook -->
-            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-facebook-f"></i></a>
-
-            <!-- Twitter -->
-            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-twitter"></i></a>
-
-            <!-- Pinterest -->
-            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-pinterest-p"></i></a>
-
-            <!-- Youtube -->
-            <a type="button" class="btn-floating btn-secondary"><i class="fab  fa-youtube"></i></a>
-
-            <!-- Instagram -->
-            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-instagram"></i></a>
-
+      <!-- Footer Links -->
+      <div class="container mb-2">
+  
+        <!-- First row -->
+        <div class="row">
+  
+          <!-- First column -->
+          <div class="col-md-12 my-4 wow fadeIn" data-wow-delay="0.3s">
+  
+            <div class="footer-socials flex-center">
+  
+              <!-- Facebook -->
+              <a type="button" class="btn-floating btn-secondary"><i class="fab fa-facebook-f"></i></a>
+  
+              <!-- Twitter -->
+              <a type="button" class="btn-floating btn-secondary"><i class="fab fa-twitter"></i></a>
+  
+              <!-- Pinterest -->
+              <a type="button" class="btn-floating btn-secondary"><i class="fab fa-pinterest-p"></i></a>
+  
+              <!-- Youtube -->
+              <a type="button" class="btn-floating btn-secondary"><i class="fab  fa-youtube"></i></a>
+  
+              <!-- Instagram -->
+              <a type="button" class="btn-floating btn-secondary"><i class="fab fa-instagram"></i></a>
+  
+            </div>
+  
           </div>
-
+          <!-- First column -->
+  
         </div>
-        <!-- First column -->
-
+        <!-- First row -->
+  
       </div>
-      <!-- First row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright py-3 text-center">
-
-      <div class="container-fluid">
-
-        © 2019 Copyright: AS Propiedades
-
+      <!-- Footer Links -->
+  
+      <!-- Copyright -->
+      <div class="footer-copyright py-3 text-center">
+  
+        <div class="container-fluid">
+  
+          © 2019 Copyright: AS Propiedades
+  
+        </div>
+  
       </div>
+      <!-- Copyright -->
+  
+    </footer>
+    <!-- Footer -->
+   
 
-    </div>
-    <!-- Copyright -->
+      
 
-  </footer>
-  <!-- Footer -->
+
+
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
@@ -598,36 +567,15 @@
   <script type="text/javascript " src="../js/mdb.min.js "></script>
 
   <script>
+  
     //Animation init
     new WOW().init();
 
-    // initialize scrollspy
-    $('body').scrollspy({
-
-      target: '.dotted-scrollspy'
-    });
-
-    // initialize lightbox
-    $(function () {
-
-      $("#mdb-lightbox-ui").load("../mdb-addons/mdb-lightbox-ui.html");
-    });
-
     $('.navbar-collapse a').click(function () {
-
       $(".navbar-collapse").collapse('hide');
-    });
-
-    cards = ['#card-alquilar', '#card-comprar', '#card-emprendimientos', '#card-tasaciones']
-    cards.forEach(card => {
-      $(card).hover(
-        function(){$(this).addClass('flipped')},
-        function(){$(this).removeClass('flipped')},
-      )
     });
 
   </script>
 
 </body>
-
 </html>
