@@ -9,7 +9,12 @@ const propiedades = [
       vendido: false,
       etiquetas: ['3 amb.', '2 bañ.', 'cochera', '200 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     },
     {
       id: 2,
@@ -21,7 +26,12 @@ const propiedades = [
       vendido: true,
       etiquetas: ['4 amb.', '3 bañ.', 'jardin botanico', '400 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     },
     {
       id: 3,
@@ -33,7 +43,12 @@ const propiedades = [
       vendido: false,
       etiquetas: ['3 amb.', '2 bañ.', 'cochera', '200 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     },
     {
       id: 4,
@@ -45,7 +60,12 @@ const propiedades = [
       vendido: true,
       etiquetas: ['3 amb.', 'cochera', '200 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     },
     {
       id: 5,
@@ -57,7 +77,12 @@ const propiedades = [
       vendido: true,
       etiquetas: ['3 amb.', '2 bañ.', '200 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     },
     {
       id: 6,
@@ -69,5 +94,10 @@ const propiedades = [
       vendido: false,
       etiquetas: ['3 amb.', '2 bañ.', 'cochera', '200 m² total'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
-      zona: 'G.B.A Zona Oeste'
+      zona: 'G.B.A Zona Oeste',
+      carousel: [
+        '../img/as-prop/propiedades/001/casa.jose.001.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.002.jpg',
+        '../img/as-prop/propiedades/001/casa.jose.003.jpg',
+      ],
     }];
