@@ -13,8 +13,13 @@
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="../css/mdb.min.css" rel="stylesheet">
-
+  <!-- Muli google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Muli', sans-serif;
+    }
+
     html,
     body,
     header,
@@ -36,6 +41,10 @@
     }
     header {
       height: auto;
+    }
+
+    a {
+      color: inherit;
     }
 
   </style>
@@ -124,16 +133,7 @@
 
         <div class="col-md-5">
           <div class="card px-2 py-2">
-            <section id="layout-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-
-                <li data-target="#layout-carousel" data-slide-to="0" class="active"></li>
-
-                <li data-target="#layout-carousel" data-slide-to="1"></li>
-
-                <li data-target="#layout-carousel" data-slide-to="2"></li>
-
-              </ol>
+            <section id="layout-carousel" class="carousel slide" data-ride="carousel">
             <section class="carousel-inner">
               <div class="carousel-item active">
                 <img class="img-fluid d-block " src="../img/as-prop/propiedades/001/casa.jose.001.jpg" alt="Carousel 1">
@@ -147,6 +147,16 @@
             </section>
             </section>
           </div>
+
+          <a class="carousel-control-prev" href="#layout-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#layout-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+
         </div>
           
           <div class="col-md-5">
@@ -182,7 +192,7 @@
           <div class="col-md-4 my-2">
             <div class="card px-3 py-2">
               <h5 class="text-center">Consultas</h5>
-              <div class="row align-items-center">
+              <div class="row mx-auto white-text">
                 <button class="btn red">Llamar</button>
                 <button class="btn green">Whatsapp</button>
               </div>
@@ -192,7 +202,7 @@
 
         </div>
 
-        <button class="btn white">VOLVER</button>
+        <button class="btn white"><a href="/html/listado-propiedades.html">VOLVER</a></button>
     </div>
 
   </main>
@@ -279,6 +289,9 @@
       $(".navbar-collapse").collapse('hide');
     });
 
+    $('.carousel').carousel({
+      interval: false,
+    });
   </script>
 
 </body>
