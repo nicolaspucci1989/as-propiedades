@@ -194,10 +194,12 @@
 
               <!-- Detalle Propiedad -->
               <div v-else>
+                <!-- VOLVER -->
+                <button class="btn white mt-5" @click="mostrarPropiedades = true">VOLVER</button>
                 <div>
-                    <div class="row mt-5 pt-5"> 
+                    <div class="row"> 
               
-                      <div class="col-md-5">
+                      <div class="col-md-7">
                         <div class="card px-2 py-2">
                           <section id="layout-carousel" class="carousel slide" data-ride="carousel">
                           <section class="carousel-inner">
@@ -267,8 +269,8 @@
                         </div>
               
                       </div>
-              
-                      <button class="btn white" @click="mostrarPropiedades = true">VOLVER</button>
+                      
+                      
                 </div>
               <!-- Detalle Propiedad -->
                 
@@ -435,7 +437,7 @@
     });
 
     $('.carousel').carousel({
-      interval: false
+      interval: false,
     })
 
   </script>
