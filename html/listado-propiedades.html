@@ -33,70 +33,70 @@
   <!-- Navigation & Intro -->
   <header>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
 
-          <div class="container">
-    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    
-              <span class="navbar-toggler-icon"></span>
-    
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    
-              <ul class="navbar-nav mr-auto smooth-scroll">
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
-    
-                </li>
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link" href="/html/listado-propiedades.html" data-offset="90">Venta</a>
-    
-                </li>
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link" href="/html/contacto.html#contacto" data-offset="100">Contacto</a>
-    
-                </li>
-    
-              </ul>
-    
-              <!-- Social Icon  -->
-              <ul class="navbar-nav nav-flex-icons">
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
-    
-                </li>
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link"><i class="fab fa-twitter"></i></a>
-    
-                </li>
-    
-                <li class="nav-item">
-    
-                  <a class="nav-link"><i class="fab fa-instagram"></i></a>
-    
-                </li>
-    
-              </ul>
-    
-            </div>
-    
+        <div class="container">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav mr-auto smooth-scroll">
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="/html/listado-propiedades.html" data-offset="90">Venta</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" href="/html/contacto.html#contacto" data-offset="100">Contacto</a>
+
+              </li>
+
+            </ul>
+
+            <!-- Social Icon  -->
+            <ul class="navbar-nav nav-flex-icons">
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-twitter"></i></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-instagram"></i></a>
+
+              </li>
+
+            </ul>
+
           </div>
-    
-      </nav>
+
+        </div>
+
+    </nav>
       
   </header>
   <!-- Navigation & Intro -->
@@ -113,7 +113,7 @@
         
           <!-- VUE -->
           <div id="app">
-            <!-- First container -->
+            <!-- Contenido -->
             <div class="container-fluid ml-2 pt-3">
 
               <h5 class="text-left black-text mb-3 mt-5 wow fadeIn"
@@ -121,65 +121,65 @@
             </div>
   
               <div>
-                  <div class="container row mb-4">
-                      
-                      <!--Dropdown barrio-->
-                      <div class="dropdown col-md-4">
-                      
-                        <!--Trigger-->
-                        <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false">{{barrioSeleccionado}}</button>
-                        
-                        <!--Menu-->
-                        <div class="container-fluid dropdown-menu dropdown-primary">
-                          <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
-                        </div>
-                      </div>
-                      <!--/Dropdown barrio-->
-
-                      <!--Dropdown barrio-->
-                      <div class="dropdown col-md-4">
-                      
-                          <!--Trigger-->
-                          <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">{{tipoPropiedadSeleccionada}}</button>
-                          
-                          <!--Menu-->
-                          <div class="container-fluid dropdown-menu dropdown-primary">
-                            <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
-                              :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
-                          </div>
-                      </div>
-                      <!--/Dropdown barrio-->
-                      <div class="col-md-4">
-                        <button class="btn btn-danger align-right" type="button" aria-haspopup="true" aria-expanded="false"
-                        @click="reiniciar">REINICIAR</button>
-                      </div>                      
-
-                      
+                <div class="container row mb-4">
+                    
+                  <!--Dropdown barrio-->
+                  <div class="dropdown col-md-4">
+                  
+                    <!--Trigger-->
+                    <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">{{barrioSeleccionado}}</button>
+                    
+                    <!--Menu-->
+                    <div class="container-fluid dropdown-menu dropdown-primary">
+                      <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
+                    </div>
                   </div>
+                  <!--/Dropdown barrio-->
+
+                  <!--Dropdown Tipo Propiedad -->
+                  <div class="dropdown col-md-4">
+                  
+                      <!--Trigger-->
+                      <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{tipoPropiedadSeleccionada}}</button>
+                      
+                      <!--Menu-->
+                      <div class="container-fluid dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
+                          :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
+                      </div>
+                  </div>
+                  <!--/Dropdown Tipo Propiedad -->
+                  <div class="col-md-4">
+                    <button class="btn btn-danger align-right" type="button" aria-haspopup="true" aria-expanded="false"
+                    @click="reiniciar">REINICIAR</button>
+                  </div>                      
+
+                    
+                </div>
                 <div class="row no-gutters">
-                    <div class="card col-lg-3 col-md-3 col-sm-5 mx-2 my-2 text-center" v-for="propiedad in propiedadesComputadas">
-                        <div class="view">
-                          <!-- Card image -->
-                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">
-                          <!-- Vendido -->
-                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">
-                              <p class="h3 white-text"><strong>Vendido</strong></p>
-                          </div>
-                          <!-- Vendido -->
-                        </div>
-                        <div class="card-body">
-                          <p class="h5">{{propiedad.direccion}}</p>
-                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>
-                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>
-                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">
-                            {{etiqueta}}</span>
-                        </div>
+                  <div class="card col-lg-3 col-md-3 col-sm-5 mx-2 my-2 text-center" v-for="propiedad in propiedadesComputadas">
+                    <div class="view">
+                      <!-- Card image -->
+                      <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">
+                      <!-- Vendido -->
+                      <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">
+                          <p class="h3 white-text"><strong>Vendido</strong></p>
+                      </div>
+                      <!-- Vendido -->
                     </div>
-                    <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
-                        <h1 class="font-weight-bold">{{mensajeNoSeEncontro}}</h1>
+                    <div class="card-body">
+                      <p class="h5">{{propiedad.direccion}}</p>
+                      <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>
+                      <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>
+                      <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">
+                        {{etiqueta}}</span>
                     </div>
+                  </div>
+                  <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
+                      <h1 class="font-weight-bold">{{mensajeNoSeEncontro}}</h1>
+                  </div>
                 </div>
               </div>
           </div>      
@@ -190,7 +190,7 @@
 
     
     </div>
-    <!-- First container -->
+    <!-- Contenido -->
 
   </main>
   <!-- Main layout -->

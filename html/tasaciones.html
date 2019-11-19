@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="../css/mdb.min.css" rel="stylesheet">
+  <!-- Muli google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <style>
+  body {
+    font-family: 'Muli', sans-serif;
+  }
+
+    html,
+    body {
+      height: 470px;
+    }
+
+    @media (min-width: 560px) and (max-width: 740px) {
+      html,
+      body {
+        height: 470px;
+      }
+
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      .navbar:not(.top-nav-collapse) {
+        background: #7d8488 !important;
+      }
+
+      .navbar {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
+      }
+    }
+
+    .agency .navbar:not(.top-nav-collapse) {
+      background-color: #7d7d7d
+    } 
+    
+  </style>
+
+</head>
+
+<body class="agency">
+
+  <!-- Navigation & Intro -->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top scrolling-navbar">
+
+
+        <div class="container">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggler">
+
+            <ul class="navbar-nav mr-auto smooth-scroll">
+
+              <li class="nav-item">
+
+                <a class="nav-item nav-link" href="/index.html">Inicio <span class="sr-only">(current)</span></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-item nav-link" href="html/listado-propiedades.html" data-offset="90">Venta</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-item nav-link" href="html/contacto.html#contacto" data-offset="100">Contacto</a>
+
+              </li>
+
+            </ul>
+
+            <!-- Social Icon  -->
+            <ul class="navbar-nav nav-flex-icons">
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-whatsapp"></i></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-twitter"></i></a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link"><i class="fab fa-instagram"></i></a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+    </nav>
+    <!-- Navbar -->
+
+
+  </header>
+  <!-- Navigation & Intro -->
+
+  <!-- Main layout -->
+  <main>
+
+    <!-- Fifth container -->
+    <div class="container round">
+
+      <!-- Contact -->
+      <section id="contact" class="section mb-4 ">
+
+        <!-- Section title -->
+        <h2 class="balck-text text-center text-uppercase font-weight-bold my-5 pt-5 wow fadeIn " data-wow-delay="0.2s ">
+          Tasaciones <i class="fas fa-balance-scale"></i>
+
+        <!-- Section sescription -->
+        <h3 class="text-center w-responsive mx-auto grey-text mb-5 wow fadeIn " data-wow-delay="0.2s ">
+          ¿Queres vender o alquilar una propiedad?</h3>
+
+        <!-- TODO: centrar contenido -->
+        <div class="row wow fadeIn justify-content-center" data-wow-delay="0.4s "> 
+
+          <!-- Grid column -->
+          <div class="col-md-9 mb-5">
+
+            <form>
+              
+              <section id="datos-usuario">
+                <h4>Datos del usuario</h4>
+                <!-- Grid row -->
+                <div class="row">
+
+                  <!-- Grid column -->
+                  <div class="col-md-6">
+
+                    <div class="md-form mb-0">
+
+                      <input type="text" id="contact-name" class="form-control">
+
+                      <label for="contact-name" class="">Nombre</label>
+
+                    </div>
+
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-6">
+
+                    <div class="md-form mb-0">
+
+                      <input type="text" id="contact-apellido" class="form-control">
+
+                      <label for="contact-apellido" class="">Apellido</label>
+
+                    </div>
+
+                  </div>
+                  <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+                <!-- Grid row -->
+                <div class="row mb-5">
+
+                  <div class="col-md-6">
+
+                    <div class="md-form mb-0">
+
+                      <input type="email" id="contact-email" class="form-control">
+
+                      <label for="contact-email" class="">Email</label>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-6">
+
+                    <div class="md-form mb-0">
+
+                      <input type="tel" id="contact-telefono" class="form-control">
+
+                      <label for="contact-telefono" class="">Telefono</label>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                <!-- Grid row -->
+
+               </section>
+
+              <section id="datos-propiedad">
+
+                <h4>Datos de la Propiedad</h4>
+                <!-- Grid row -->
+                <div class="row">
+
+                  <!-- Tipo Propiedad -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-tipo-propiedad" class="form-control">
+
+                        <label for="contact-tipo-propiedad" class="">Tipo de Propiedad</label>
+
+                      </div>
+
+                  </div>
+
+                  <!-- Localidad -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-localidad" class="form-control">
+
+                        <label for="contact-localidad" class="">Localidad</label>
+
+                      </div>
+
+                  </div>
+                  
+                </div>
+                <!-- Grid row -->
+                
+                <!-- Grid row -->
+                <div class="row">
+
+                  <!-- Calle -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-calle" class="form-control">
+
+                        <label for="contact-calle" class="">Calle</label>
+
+                      </div>
+
+                  </div>
+
+                  <!-- Numero -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-numero" class="form-control">
+
+                        <label for="contact-numero" class="">Numero</label>
+
+                      </div>
+
+                  </div>
+                  
+                </div>
+                <!-- Grid row -->
+                
+                <!-- Grid row -->
+                <div class="row">
+
+                  <!-- Calle -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-sup-total" class="form-control">
+
+                        <label for="contact-sup-total" class="">Sup. Total (m²)</label>
+
+                      </div>
+
+                  </div>
+
+                  <!-- Numero -->
+                  <div class="col-md-6">
+
+                      <div class="md-form mb-0">
+
+                        <input type="text" id="contact-sup-cubierta" class="form-control">
+
+                        <label for="contact-sup-cubierta" class="">Sup. Cubierta (m²)</label>
+
+                      </div>
+
+                  </div>
+                  
+                </div>
+                <!-- Grid row -->
+
+                <!-- Grid row -->
+                <div class="row">
+
+                  <!-- Comentarios -->
+                  <div class="col-md-12">
+
+                    <div class="md-form mb-0">
+  
+                      <textarea type="text" id="contact-comentarios" class="md-textarea form-control" rows="3"></textarea>
+  
+                      <label for="contact-comentarios">Comentarios</label>
+  
+                    </div>
+                    
+                  </div>
+
+                  </div>
+                  <!-- Grid row -->
+
+            </section>
+
+            </form>
+
+            <div class="text-center text-md-left mt-4">
+
+              <a class="btn btn-rounded btn-outline-black waves-effect ">Send <i class="far fa-paper-plane"></i></a>
+
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+
+      </section>
+      <!-- Section: Contact v.2 -->
+
+    </div>
+    <!-- Fifth container -->
+
+  </main>
+  <!-- Main layout -->
+
+  <!-- Footer -->
+  <footer class="page-footer text-center text-md-left elegant-color-dark">
+
+    <!-- Footer Links -->
+    <div class="container mb-2">
+
+      <!-- First row -->
+      <div class="row">
+
+        <!-- First column -->
+        <div class="col-md-12 my-4 wow fadeIn" data-wow-delay="0.3s">
+
+          <div class="footer-socials flex-center">
+
+            <!-- Facebook -->
+            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-twitter"></i></a>
+
+            <!-- Pinterest -->
+            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-pinterest-p"></i></a>
+
+            <!-- Youtube -->
+            <a type="button" class="btn-floating btn-secondary"><i class="fab  fa-youtube"></i></a>
+
+            <!-- Instagram -->
+            <a type="button" class="btn-floating btn-secondary"><i class="fab fa-instagram"></i></a>
+
+          </div>
+
+        </div>
+        <!-- First column -->
+
+      </div>
+      <!-- First row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright py-3 text-center">
+
+      <div class="container-fluid">
+
+        © Ariel Sauret Propiedades. Todos los derechos reservados.
+
+      </div>
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript " src="../js/jquery-3.4.1.min.js "></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript " src="../js/popper.min.js "></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript " src="../js/bootstrap.min.js "></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript " src="../js/mdb.min.js "></script>
+
+  <script>
+    // initialize scrollspy
+    $('body').scrollspy({
+
+      target: '.dotted-scrollspy'
+    });
+
+    // initialize lightbox
+    $(function () {
+
+      $("#mdb-lightbox-ui ").load("mdb-addons/mdb-lightbox-ui.html ");
+    });
+
+    /* WOW.js init */
+    new WOW().init();
+
+    $('.navbar-collapse a').click(function () {
+
+      $(".navbar-collapse ").collapse('hide');
+    });
+
+  </script>
+
+</body>
+
+</html>
