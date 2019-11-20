@@ -29,6 +29,20 @@
     a {
       color: inherit;
     }
+
+    .map-container{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+    }
+    .map-container iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+    }
   </style>
 
 </head>
@@ -200,17 +214,30 @@
                     <div class="row"> 
               
                       <div class="col-md-7">
-                        <div class="card px-2 py-2">
-                          <section id="layout-carousel" class="carousel slide" data-ride="carousel">
-                          <section class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img class="img-fluid d-block " :src="propiedadSeleccionada.carousel[0]" alt="Carousel 1">
-                            </div>
-                            <div class="carousel-item" v-for="imagen in carouselMenosUno">
-                              <img class="img-fluid d-block" :src="imagen" alt="Carousel 2">
-                            </div>
+                        <div class="card px-2 py-2 d-flex">
+                          <!--Google map-->
+                          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px" v-show="mapa == true">
+                              <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                                style="border:0" allowfullscreen></iframe>
+                          </div>
+                          <!-- Google map -->
+
+                          <!-- Galeria Fotos -->
+                          <section id="layout-carousel" class="carousel slide" data-ride="carousel" v-show="mapa == false">
+                            <section class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="img-fluid d-block " :src="propiedadSeleccionada.carousel[0]" alt="Carousel 1">
+                              </div>
+                              <div class="carousel-item" v-for="imagen in carouselMenosUno">
+                                <img class="img-fluid d-block" :src="imagen" alt="Carousel 2">
+                              </div>
+                            </section>
                           </section>
-                          </section>
+                          <!-- Galeria Fotos -->
+
+                          <button class="btn white align-self-left ml-5 px-3" 
+                            style="position: absolute; top: 85%" @click="mapa = !mapa"><i class="fas fa-compass fa-lg"></i></button>
+
                         </div>
               
                         <a class="carousel-control-prev" href="#layout-carousel" role="button" data-slide="prev">
@@ -363,6 +390,7 @@
     let vm = new Vue({
       el: '#app',
       data: {
+        mapa: false,
         mostrarPropiedades: true,
         propiedadSeleccionada: null,
         barrioSeleccionado: 'Todos los barrios',
