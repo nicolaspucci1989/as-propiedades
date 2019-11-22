@@ -217,15 +217,15 @@
               <!-- Detalle Propiedad -->
               <template v-else>
                 <!-- Botones -->
-                <div class="row">
-                  <button class="btn white btn-sm btn-rounded mt-5" @click="mostrarPropiedades = true">VOLVER</button>
-                  <button class="btn white btn-sm btn-rounded mt-5" 
-                          @click="mapa = false"><i class="fas fa-camera fa-lg"></i></button>
-                  <button class="btn white btn-sm btn-rounded mt-5" 
-                          @click="mapa = true"><i class="fas fa-compass fa-lg"></i></button>
-                  <button class="btn white btn-sm btn-rounded mt-5" 
-                          v-if="propiedadSeleccionada.video"
-                          @click="mapa = false"><i class="fas fa-camera fa-lg"></i></button>
+                <div class="row mt-5">
+                  <button class="btn white btn-sm btn-rounded" @click="mostrarPropiedades = true">VOLVER</button>
+                  <button class="btn white btn-sm btn-rounded" 
+                          @click="mostrarFotos"><i class="fas fa-camera fa-lg"></i></button> <!--  Fotos -->
+                  <button class="btn white btn-sm btn-rounded" 
+                          @click="mostrarMapa"><i class="fas fa-compass fa-lg"></i></button> <!-- Mapa -->
+                  <button class="btn white btn-sm btn-rounded" 
+                          v-if="propiedadTieneVideo"
+                          @click="mostrarVideo"><i class="fas fa-video fa-lg"></i></button> <!-- Video -->
                 </div>
                 <div>
                     <div class="row"> 
@@ -238,12 +238,12 @@
                         </div>
                       </div>
                       <!-- Google map -->
-
-                      <div class="col-md-7" v-show="mapa == false">
+                      
+                      <!-- Galeria Fotos -->
+                      <div class="col-md-7" v-show="fotos == true">
                         <div class="card px-2 py-2 d-flex">
                          
 
-                          <!-- Galeria Fotos -->
                           <section id="layout-carousel" class="carousel slide" data-ride="carousel">
                             <section class="carousel-inner">
                               <div class="carousel-item active">
@@ -254,7 +254,6 @@
                               </div>
                             </section>
                           </section>
-                          <!-- Galeria Fotos -->
 
                         </div>
 
@@ -267,9 +266,16 @@
                           <span class="sr-only">Siguiente</span>
                         </a>
 
-                        
-
                       </div>
+                      <!-- Galeria Fotos -->
+                      
+                      <!-- Video -->
+                      <div class="col-md-7" v-if="video == true">
+                          <div class="embed-responsive embed-responsive-16by9">
+                              <iframe class="embed-responsive-item" src="/video/007.mp4"></iframe>
+                            </div>
+                      </div>
+                      <!-- Video -->
                         
                         <div class="col-md-5">
                           <div class="card px-3 py-2">
@@ -411,13 +417,15 @@
       el: '#app',
       data: {
         mapa: false,
+        video: false,
+        fotos: true,
         mostrarPropiedades: true,
         propiedadSeleccionada: null,
         barrioSeleccionado: 'Todos los barrios',
         tipoPropiedadSeleccionada: 'Todas las propiedades',
         propiedades: propiedades,
         barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Moron', 'San Martin'],
-        tipoPropiedades: ['Todas las propiedades','Chalet', 'Casa', 'PH', 'Departamento'],
+        tipoPropiedades: ['Todas las propiedades','Chalet', 'Casa', 'PH', 'Dpto.'],
       },
       computed: {
         propiedadesComputadas: function() {
@@ -448,6 +456,9 @@
          },
          carouselMenosUno: function() {
            return this.propiedadSeleccionada.carousel.slice(1);
+         },
+         propiedadTieneVideo: function() {
+           return this.propiedadSeleccionada.hasOwnProperty("video");
          }
       },
       methods: {
@@ -458,7 +469,22 @@
         actualizarPropiedad: function(propiedad) {
           this.propiedadSeleccionada = propiedad;
           this.mostrarPropiedades = false;
-        }
+        },
+        mostrarFotos: function() {
+          this.fotos = true;
+          this.mapa = false;
+          this.video = false;
+        },
+        mostrarMapa: function() {
+          this.fotos = false;
+          this.video = false;
+          this.mapa = true;
+        },
+        mostrarVideo: function() {
+          this.fotos = false;
+          this.mapa = false;
+          this.video = true;
+        },
       }
     });
   </script>
