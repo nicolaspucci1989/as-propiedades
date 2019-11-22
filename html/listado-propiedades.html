@@ -13,8 +13,14 @@
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="../css/mdb.min.css" rel="stylesheet">
+  <!-- Muli google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 
   <style>
+    body {
+      font-family: 'Muli', sans-serif;
+    }
+    
     html,
     body,
     header,
@@ -125,91 +131,102 @@
 
     <div class="container-fluid mt-4">
 
-        <!-- Listado Propiedades -->
+        <!-- Propiedades -->
         <section id="propiedades" class="section pt-2 pb-5">
           <!-- VUE -->
             <div id="app">
 
               <!-- Lista Propiedades -->
-              <div v-if="mostrarPropiedades == true">
-                <!-- Contenido -->
-                <div class="container-fluid ml-2 pt-3">
-
-                  <h5 class="text-left black-text mb-3 mt-5 wow fadeIn"
-                  data-wow-delay="0.2s">{{propiedadesEncontradas}}</h5>
-                </div>
-      
+              <template v-if="mostrarPropiedades == true">
                 <div>
-                    <div class="container row mx-auto">
-                        
-                      <!--Dropdown barrio-->
-                      <div class="dropdown col-md-4">
-                      
-                        <!--Trigger-->
-                        <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false">{{barrioSeleccionado}}</button>
-                        
-                        <!--Menu-->
-                        <div class="container-fluid dropdown-menu dropdown-primary">
-                          <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
-                        </div>
-                      </div>
-                      <!--/Dropdown barrio-->
+                  <!-- Contenido -->
+                  <div class="container-fluid ml-2 pt-3">
 
-                      <!--Dropdown Tipo Propiedad -->
-                      <div class="dropdown col-md-4">
-                      
+                    <h5 class="text-left black-text mb-3 mt-5 wow fadeIn"
+                    data-wow-delay="0.2s">{{propiedadesEncontradas}}</h5>
+                  </div>
+        
+                  <div>
+                      <div class="container row mx-auto">
+                          
+                        <!--Dropdown barrio-->
+                        <div class="dropdown col-md-4">
+                        
                           <!--Trigger-->
-                          <button class="container-fluid btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">{{tipoPropiedadSeleccionada}}</button>
+                          <button class="container-fluid btn btn-rounded btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">{{barrioSeleccionado}}</button>
                           
                           <!--Menu-->
                           <div class="container-fluid dropdown-menu dropdown-primary">
-                            <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
-                              :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
+                            <a class="dropdown-item" v-for="barrio in barrios" @click="barrioSeleccionado = barrio">{{barrio}}</a>
                           </div>
-                      </div>
-                      <!--/Dropdown Tipo Propiedad -->
-                      <div class="col-md-4">
-                        <button class="btn btn-danger align-right" type="button" aria-haspopup="true" aria-expanded="false"
-                        @click="reiniciar">REINICIAR</button>
-                      </div>                      
+                        </div>
+                        <!--/Dropdown barrio-->
 
+                        <!--Dropdown Tipo Propiedad -->
+                        <div class="dropdown col-md-4">
                         
-                    </div>
-                    <div class="row no-gutters">
-                      <a class="card col-xl-2 col-lg-3 col-md-3 col-sm-5 mx-2 my-2 text-center" @click="actualizarPropiedad(propiedad)"
-                                                                                        v-for="propiedad in propiedadesComputadas">
-                        <div class="view">
-                          <!-- Card image -->
-                          <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">
-                          <!-- Vendido -->
-                          <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">
-                              <p class="h3 white-text"><strong>Vendido</strong></p>
-                          </div>
-                          <!-- Vendido -->
+                            <!--Trigger-->
+                            <button class="container-fluid btn btn-rounded btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">{{tipoPropiedadSeleccionada}}</button>
+                            
+                            <!--Menu-->
+                            <div class="container-fluid dropdown-menu dropdown-primary">
+                              <a class="dropdown-item" v-for="tipoPropiedad in tipoPropiedades"
+                                :tipoPropiedadSeleccionado="tipoPropiedad" @click="tipoPropiedadSeleccionada = tipoPropiedad">{{tipoPropiedad}}</a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                          <p class="h5">{{propiedad.direccion}}</p>
-                          <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>
-                          <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>
-                          <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">
-                            {{etiqueta}}</span>
-                        </div>
-                      </a>
-                      <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
-                          <h1 class="font-weight-bold">{{mensajeNoSeEncontro}}</h1>
+                        <!--/Dropdown Tipo Propiedad -->
+                        <div class="col-md-4">
+                          <button class="btn btn-danger btn-rounded align-right" type="button" aria-haspopup="true" aria-expanded="false"
+                          @click="reiniciar">REINICIAR</button>
+                        </div>                      
+
+                          
                       </div>
-                    </div>
+                      <div class="row no-gutters">
+                        <a class="card col-xl-2 col-lg-3 col-md-3 col-sm-5 mx-2 my-2 text-center" @click="actualizarPropiedad(propiedad)"
+                                                                                          v-for="propiedad in propiedadesComputadas">
+                          <div class="view">
+                            <!-- Card image -->
+                            <img v-bind:src="propiedad.imagen" alt="Card image cap" class="card-img-top">
+                            <!-- Vendido -->
+                            <div v-if="propiedad.vendido === true" class="mask flex-center rgba-red-light">
+                                <p class="h3 white-text"><strong>Vendido</strong></p>
+                            </div>
+                            <!-- Vendido -->
+                          </div>
+                          <div class="card-body">
+                            <p class="h5">{{propiedad.direccion}}</p>
+                            <p class="h6">{{propiedad.tipo}} - {{propiedad.barrio}}</p>
+                            <p class="h5 ">USD ${{propiedad.valor}} - Venta</p>
+                            <span class="badge badge-pill badge-light m-1" v-for="etiqueta in propiedad.etiquetas">
+                              {{etiqueta}}</span>
+                          </div>
+                        </a>
+                        <div class="mx-5 my-5" v-if="propiedadesComputadas.length === 0">
+                            <h1 class="font-weight-bold">{{mensajeNoSeEncontro}}</h1>
+                        </div>
+                      </div>
+                  </div>
                 </div>
-              </div>
+              </template>
               <!-- Lista Propiedades -->
 
 
               <!-- Detalle Propiedad -->
-              <div v-else>
-                <!-- VOLVER -->
-                <button class="btn white mt-5" @click="mostrarPropiedades = true">VOLVER</button>
+              <template v-else>
+                <!-- Botones -->
+                <div class="row">
+                  <button class="btn white btn-sm btn-rounded mt-5" @click="mostrarPropiedades = true">VOLVER</button>
+                  <button class="btn white btn-sm btn-rounded mt-5" 
+                          @click="mapa = false"><i class="fas fa-camera fa-lg"></i></button>
+                  <button class="btn white btn-sm btn-rounded mt-5" 
+                          @click="mapa = true"><i class="fas fa-compass fa-lg"></i></button>
+                  <button class="btn white btn-sm btn-rounded mt-5" 
+                          v-if="propiedadSeleccionada.video"
+                          @click="mapa = false"><i class="fas fa-camera fa-lg"></i></button>
+                </div>
                 <div>
                     <div class="row"> 
               
@@ -217,7 +234,7 @@
                         <div class="card px-2 py-2 d-flex">
                           <!--Google map-->
                           <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px" v-show="mapa == true">
-                              <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                              <iframe :src="propiedadSeleccionada.mapa" frameborder="0"
                                 style="border:0" allowfullscreen></iframe>
                           </div>
                           <!-- Google map -->
@@ -226,7 +243,7 @@
                           <section id="layout-carousel" class="carousel slide" data-ride="carousel" v-show="mapa == false">
                             <section class="carousel-inner">
                               <div class="carousel-item active">
-                                <img class="img-fluid d-block " :src="propiedadSeleccionada.carousel[0]" alt="Carousel 1">
+                                <img class="img-fluid d-block " :src="propiedadSeleccionada.carousel[0]" alt="Carousel 1" width="1331" height="998">
                               </div>
                               <div class="carousel-item" v-for="imagen in carouselMenosUno">
                                 <img class="img-fluid d-block" :src="imagen" alt="Carousel 2">
@@ -235,11 +252,8 @@
                           </section>
                           <!-- Galeria Fotos -->
 
-                          <button class="btn white align-self-left ml-5 px-3" 
-                            style="position: absolute; top: 85%" @click="mapa = !mapa"><i class="fas fa-compass fa-lg"></i></button>
-
                         </div>
-              
+
                         <a class="carousel-control-prev" href="#layout-carousel" role="button" data-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="sr-only">Anterior</span>
@@ -248,7 +262,9 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="sr-only">Siguiente</span>
                         </a>
-              
+
+                        
+
                       </div>
                         
                         <div class="col-md-5">
@@ -288,8 +304,8 @@
                           <div class="card px-3 py-2">
                             <h5 class="text-center">Consultas</h5>
                             <div class="row mx-auto white-text">
-                              <button class="btn red">Llamar</button>
-                              <button class="btn green">Whatsapp</button>
+                              <button class="btn btn-rounded red">Llamar</button>
+                              <button class="btn btn-rounded green">Whatsapp</button>
                             </div>
               
                           </div>
@@ -299,14 +315,14 @@
                       
                       
                 </div>
+              </template>
               <!-- Detalle Propiedad -->
                 
-              </div>
 
             </div>      
           <!-- VUE -->
         </section>
-        <!-- Listado Propiedades -->
+        <!-- Propiedades -->
 
     
     </div>
@@ -396,7 +412,7 @@
         barrioSeleccionado: 'Todos los barrios',
         tipoPropiedadSeleccionada: 'Todas las propiedades',
         propiedades: propiedades,
-        barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Moron', 'Ballester'],
+        barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Moron', 'San Martin'],
         tipoPropiedades: ['Todas las propiedades','Chalet', 'Casa', 'PH', 'Departamento'],
       },
       computed: {
