@@ -10,6 +10,7 @@ const propiedades = [
       etiquetas: ['4 amb.', 'patio', 'parrilla', 'garage', 'terraza libre'],
       descripcion: "Importante esquina con excelente cuidado. Cuenta con cocina amoblada, living comedor amplio con ventanales, baño completo, 2 habitaciones, patio con parrilla, garage y terraza libre.",
       zona: 'G.B.A Zona Oeste',
+      mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8139736388666!2d-58.59935896431208!3d-34.5835733080803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb9a0d1aebf33%3A0x1bee1f6a1f8a3b8b!2sPres.%20Juan%20Domingo%20Per%C3%B3n%207693%2C%20B1683BBQ%20Mart%C3%ADn%20Coronado%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1574629783517!5m2!1sen!2sar',
       carousel: [
         '../img/as-prop/propiedades/001/casa.jose.01.jpg',
         '../img/as-prop/propiedades/001/casa.jose.02.jpg',
@@ -31,6 +32,7 @@ const propiedades = [
       etiquetas: ['2 amb.', 'bañ.', 'placard', 'balcon'],
       descripcion: "Impecable y a estrenar dto 2 ambientes. Cuenta con cocina amoblada con bajo mesada, comedor amplio, baño totalmente equipado, habitación con placard embutido y balcón al frente.",
       zona: 'G.B.A Zona Oeste',
+      mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.497331121509!2d-58.58245008468824!3d-34.59158356436334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb9b452f919c9%3A0xc45adf47f120e9a4!2sSan%20Guillermo%205830%2C%20B1683AJB%20Mart%C3%ADn%20Coronado%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1574630267781!5m2!1sen!2sar',
       carousel: [
         '../img/as-prop/propiedades/002/dpto-villa-bosch.01.jpg',
         '../img/as-prop/propiedades/002/dpto-villa-bosch.02.jpg',
@@ -56,6 +58,7 @@ const propiedades = [
       etiquetas: ['3 amb.', '2 bañ.', 'cochera', 'pileta'],
       descripcion: "Impecable casa. Cuenta con pileta y cochera, amplia cocina y comedor.",
       zona: 'G.B.A Zona Oeste',
+      mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26269.554722250105!2d-58.614036246878214!3d-34.61188992885653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb859089ff8d5%3A0x5637c534d2130a66!2sEl%20Palomar%2C%20Buenos%20Aires%20Province!5e0!3m2!1sen!2sar!4v1574630345768!5m2!1sen!2sar',
       carousel: [
         '../img/as-prop/propiedades/003/casa.palomar.01.jpg',
         '../img/as-prop/propiedades/003/casa.palomar.02.jpg',
@@ -93,6 +96,7 @@ const propiedades = [
       etiquetas: ['3 dorm.', '2 bañ.', 'Parrilla', 'Jacuzzi', 'Jardin'],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
       zona: 'G.B.A Zona Oeste',
+      mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.686816251388!2d-58.59740838468842!3d-34.58679026410974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb9a66ff4503d%3A0xbc3d842d4c555329!2s12%20de%20Octubre%202141%2C%20B1683CVO%20Mart%C3%ADn%20Coronado%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1574630424539!5m2!1sen!2sar',
       carousel: [
         '../img/as-prop/propiedades/004/chalet.mcoronado.01.jpg',
         '../img/as-prop/propiedades/004/chalet.mcoronado.02.jpg',
@@ -134,6 +138,7 @@ const propiedades = [
       etiquetas: [],
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa voluptate officia, qui doloribus vitae necessitatibus. Pariatur ipsum reprehenderit, dolore, alias architecto modi consequuntur, minima exercitationem accusantium quisquam quo soluta.",
       zona: 'G.B.A Zona Oeste',
+      mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.849598437426!2d-58.60443091433676!3d-34.598790224454014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb9ab4a5771b3%3A0x690cbb88f054e680!2sCiudad%20Jard%C3%ADn%20Lomas%20del%20Palomar%2C%20Buenos%20Aires%20Province!5e0!3m2!1sen!2sar!4v1574630484934!5m2!1sen!2sar',
       carousel: [
         '../img/as-prop/propiedades/005/ciudad.jardin-lucas.01.jpg',
         '../img/as-prop/propiedades/005/ciudad.jardin-lucas.02.jpg',
