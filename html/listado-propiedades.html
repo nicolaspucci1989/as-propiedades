@@ -218,7 +218,8 @@
               <template v-else>
                 <!-- Botones -->
                 <div class="row mt-5">
-                  <button class="btn white btn-sm btn-rounded" @click="mostrarPropiedades = true">VOLVER</button>
+                  <button class="btn white btn-sm btn-rounded" 
+                          @click="volver">VOLVER</button> <!-- Volver -->
                   <button class="btn white btn-sm btn-rounded" 
                           @click="mostrarFotos"><i class="fas fa-camera fa-lg"></i></button> <!--  Fotos -->
                   <button class="btn white btn-sm btn-rounded" 
@@ -484,6 +485,10 @@
           this.fotos = false;
           this.mapa = false;
           this.video = true;
+        },
+        volver: function() {
+          this.mostrarFotos();
+          this.mostrarPropiedades = true;
         },
       }
     });
