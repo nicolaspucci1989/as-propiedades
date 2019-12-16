@@ -211,7 +211,7 @@ const propiedades = [
       etiquetas: ['64 m²', '3 amb.', 'cochera', 'apto credito'],
       descripcion: "2 dormitorios con placar, living comedor amplio, cocina comedor separada, baño, balcon y cochera, 64 mts2 estado muy bueno, edificio apto profesional, a una cuadra de la plaza san martin. APTO CREDITO BANCARIO!!. Las medidas indicadas son aproximadas y al solo efecto orientativo, las medidas reales surgirán del título de propiedad respectivo. La venta de este inmueble está sujeta a la tramitación del código de transferencia de inmuebles (COTI), de conformidad con la normativa vigente (Res. AFIP 2371/08, 2439/08 y ccs.), por parte de propietario. Fotos de carácter no contractual. El valor de las expensas, en caso de tener, está sujeto a verificación y/o ajustes.",
       zona: 'G.B.A Zona Norte',
-      video: 'video/007.mp4',
+      video: 'https://www.youtube.com/embed/ZAGTim56ixk',
       mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.1034600352814!2d-58.54164728933679!3d-34.576248611477666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7711c7954f1%3A0x38b6606cffae854a!2sSan%20Lorenzo%202200%2C%20B1650%20San%20Mart%C3%ADn%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1574433678309!5m2!1ses-419!2sar",
       carousel: [
         '../img/as-prop/propiedades/007/san-martin-vend.01.jpg',

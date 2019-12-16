@@ -96,7 +96,7 @@
 
             <!-- Social Icon  -->
             <ul class="navbar-nav nav-flex-icons">
-              
+
               <li class="nav-item">
     
                 <a class="nav-link"><i class="fab fa-whatsapp"></i></a>
@@ -277,10 +277,8 @@
                       <!-- Galeria Fotos -->
                       
                       <!-- Video -->
-                      <div class="col-md-7" v-if="video == true">
-                          <div class="embed-responsive embed-responsive-16by9">
-                              <iframe class="embed-responsive-item" src="/video/007.mp4"></iframe>
-                            </div>
+                      <div class="col-md-7 embed-responsive embed-responsive-16by9" v-if="video == true">
+                              <iframe class="embed-responsive-item" :src="propiedadSeleccionada.video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
                       <!-- Video -->
                         
@@ -431,7 +429,7 @@
         barrioSeleccionado: 'Todos los barrios',
         tipoPropiedadSeleccionada: 'Todas las propiedades',
         propiedades: propiedades,
-        barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Moron', 'San Martin'],
+        barrios: ['Todos los barrios', 'Palomar', 'Villa Bosch', 'Ramos Mejia', 'San Martin'],
         tipoPropiedades: ['Todas las propiedades','Chalet', 'Casa', 'PH', 'Dpto.'],
       },
       computed: {
